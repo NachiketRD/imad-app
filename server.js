@@ -10,8 +10,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/artical-one', function (req, res){
-    res.send('Atical one has requested and will be served here!');
-});
+    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+})
 
 app.get('/artical-two', function (req, res){
     res.send('Atical two has requested and will be served here!');
@@ -33,7 +33,8 @@ app.get('/ui/madi.png', function (req, res) {
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
-var port = 80;
+var port = 8081;
 app.listen(port, function () {
-  console.log(`IMAD course app listening on port ${port}!`);
+  //noinspection JSAnnotator
+    console.log(`IMAD course app listening on port ${port}!`);
 });
